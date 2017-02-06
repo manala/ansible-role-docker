@@ -1,0 +1,12 @@
+---
+
+- name: "{{ test }}"
+  hosts: all
+  tasks:
+    - debug:
+        msg: Test B
+    - debug:
+        var: ansible_distribution_release
+  post_tasks:
+    - name: Goss
+      command: goss --gossfile {{ test }}.goss.yml validate

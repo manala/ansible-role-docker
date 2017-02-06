@@ -1,0 +1,8 @@
+package:
+  bash:
+    installed: true
+    versions:
+    - 4.3-11+deb8u1
+process:
+  bash:
+    running: false

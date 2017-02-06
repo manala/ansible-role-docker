@@ -10,9 +10,8 @@ before_install:
   - docker pull manala/ansible-debian:jessie
 
 script:
-  - make lint@wheezy
+  - make lint
   - make test@wheezy
-  - make lint@jessie
   - make test@jessie
 
 notifications:
