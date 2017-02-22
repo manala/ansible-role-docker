@@ -1,0 +1,9 @@
+---
+
+command:
+  stylelint --version:
+    exit-status: 0
+    timeout:     600000
+  eslint --version:
+    exit-status: 0
+    timeout:     600000
