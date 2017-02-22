@@ -17,9 +17,6 @@ class LookupModule(LookupBase):
             'version': 'latest'
         }
 
-        print(self._flatten(terms[0]))
-        print(patterns)
-
         for term in self._flatten(terms[0]):
 
             items = []
@@ -30,7 +27,6 @@ class LookupModule(LookupBase):
 
                 # Pattern
                 if not patterns.has_key(term.split('@')[0]):
-                    print(term.split('@')[0])
                     raise AnsibleError('Unknown pattern')
 
                 item.update(patterns.get(term.split('@')[0]))
