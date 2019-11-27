@@ -1,0 +1,36 @@
+---
+
+# Install
+- import_tasks: install.yml
+  tags:
+    - manala_docker
+
+# Config - Daemon
+- import_tasks: config_daemon.yml
+  tags:
+    - manala_docker
+
+# Services
+- import_tasks: services.yml
+  tags:
+    - manala_docker
+    - manala_docker.services
+    - manala.services
+
+# Applications
+- import_tasks: applications.yml
+  tags:
+    - manala_docker
+
+# Containers
+- import_tasks: containers.yml
+  tags:
+    - manala_docker
+
+# Update
+- import_tasks: update.yml
+  when: __manala_docker['update']
+  tags:
+    - manala_docker
+    - manala_docker.update
+    - manala.update

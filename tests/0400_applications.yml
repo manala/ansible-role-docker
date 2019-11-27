@@ -1,0 +1,21 @@
+---
+
+- name: "{{ test }}"
+  hosts: debian
+  become: true
+  vars:
+    manala_docker_config_daemon:
+      - storage-driver: vfs
+    manala_docker_applications:
+      - hello-world
+      - application: npm
+        image:       node
+        command:     npm
+        tag:         alpine
+  pre_tasks:
+    - import_tasks: pre_tasks/docker.yml
+  roles:
+    - manala.docker
+  post_tasks:
+    - name: Goss
+      command: goss --gossfile {{ test }}.goss.yml validate
